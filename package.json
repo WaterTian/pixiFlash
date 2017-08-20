@@ -1,0 +1,16 @@
+{
+  "name": "pixiFlash",
+  "version": "0.0.1",
+  "author": "WaterTian",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^2.0.0"
+  },
+  "main": [
+    "src/main.js"
+  ],
+  "libs": [
+    "libs/pixi.js",
+    "libs/stats.min.js"
+  ]
+}

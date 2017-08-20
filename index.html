@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>flash</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <style>
+            body {
+                font-family: Monospace;
+                background-color: #fff;
+                margin: 0px;
+                overflow: hidden;
+            }
+            .video-box{
+                position: relative;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            .canvas-box{
+                position: absolute;
+                width: 100%;
+                top: 0;
+                margin: 0;
+                padding: 0;
+                z-index: 10;
+            }
+            .log-box{
+                position: absolute;
+                top: 800px;
+                width: 100%;
+                height: 600px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="videoPlayer" class="video-box"> </div>
+        <div id="canvasBox" class="canvas-box"> </div>
+        
+        <div id="log" class="log-box">log</div>
+
+        <script src="libs/pixi.min.js"></script>
+        <script src="libs/tweenjs-NEXT.min.js"></script>
+        <script src="libs/pixi-flash.min.js"></script>
+        <script src="libs/stats.min.js"></script>
+         
+        <script src="assets/m2.js"></script>
+        <script src="assets/m1.js"></script>
+
+        <script src="src/main.js"></script>
+
+
+        <script src="libs/Swplayerlibs.min.js"></script>
+        <script src="libs/Swplayer.min.js"></script>
+        <script>
+            var videoUrl = 'http://rm01.wscdn.hls.xiaoka.tv/live/PKgH1fGGitYail8x/playlist.m3u8';
+            // var videoUrl = 'http://alcdn.hls.xiaoka.tv/2016121/4c8/834/JQzoRZZaz2zJ5GbS/index.m3u8';
+            // var videoUrl = 'http://playback.appmagics.cn/recordings/z1.appmagics-avatar-live.785192071480916430193/0_1480934734.m3u8';
+            // var videoUrl = './v3.mp4';
+            playerApp.init(videoUrl,"videoPlayer");
+
+            $('#videoPlayer').click(function() {
+                playerApp.doplay();
+                init();
+            });
+
+            var isIphone = /iphone/i.test(navigator.userAgent);
+            if(isIphone)init();
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,104 @@
+
+<!-- saved from url=(0027)http://10.2.2.215/Swplayer/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>livePlayer</title>
+        
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+        <style>
+            body {
+                font-family: Monospace;
+                background-color: #000;
+                margin: 0px;
+                overflow: hidden;
+            }
+
+            .spics{
+                background-image: url(sp.png);
+                -webkit-background-size: 400px 400px;
+                background-size: 400px 400px;
+            }
+
+            .off-btn{
+                position: absolute;
+                bottom: 200px;
+                color: #fff;
+                width: 100%;
+                text-align: center;
+
+            }
+            .off-btn .icon{
+                display: block;
+                width: 75px; 
+                height: 72px; 
+                margin: auto;
+                padding-bottom: 10px;
+                background-position: 0px -300px; 
+            }
+
+            .video-box{
+                position: absolute;
+                background: rgb(0, 0, 0);
+                width: 102.2%;
+                margin-top: 0px; 
+                margin-left: -1.1%; 
+                margin-right: -1.1%;
+            }
+            .video-box video::-webkit-media-controls{display:none!important}
+            .video-box video::-webkit-media-controls-start-playback-button{display:none!important}
+
+            .pause{display:none;position:absolute;height:100%;width:100%;top:0;left:0;z-index:1;background-color:rgba(0,0,0,.3)}
+            .pause .pause-wrap{position:relative;left:50%;top:50%;margin-left:-3rem;margin-top:-3rem;width:6rem;height:6rem;z-index:10}
+            .pause .pause-wrap img{width:100%;height:100%;border-radius:50%}
+
+        </style>
+    </head>
+    <body>
+        <div id="videoPlayer" class="video-box"> 
+        <video autoplay="" preload="auto" poster="" loop="" src="http://alcdn.hls.xiaoka.tv/2016121/4c8/834/JQzoRZZaz2zJ5GbS/index.m3u8" x5-video-player-type="h5" x5-video-player-fullscreen="true" webkit-playsinline="true" playsinline="true" x-webkit-airplay="true" style="width:100%"></video></div>
+
+        <div class="off-btn">
+            <span class="icon spics "></span>
+            <span>视频上层测试ICON</span>
+        </div>
+
+        <div class="pause" style="display: none;">
+            <div class="videobg" style="position:absolute;width:100%;height:100%;top:0;background-image: url(&#39;./p.jpg&#39;);background-position: center center;background-size: cover; background-color:transparent;"></div>
+            <div class="pause-wrap">
+                <img src="./livePlayer_files/pause.png" alt="">
+            </div>
+        </div>
+
+        <script src="./livePlayer_files/jquery-1.9.1.min.js"></script>
+        <script src="./livePlayer_files/hls.min.js"></script>
+        <script src="./livePlayer_files/swplayer.js"></script>
+        <script src="./livePlayer_files/playerApp.js"></script>
+<!-- 
+        <script src="./build/Swplayerlibs.min.js"></script>
+        <script src="./build/Swplayer.js"></script> -->
+
+
+        <script>
+
+            // var videoUrl = 'http://pili-live-hls.appmagics.cn/appmagics-avatar-live/785192071480585578293.m3u8';
+            var videoUrl = 'http://alcdn.hls.xiaoka.tv/2016121/4c8/834/JQzoRZZaz2zJ5GbS/index.m3u8';
+            // var videoUrl = 'http://pili-live-hls.appmagics.cn/appmagics-avatar-live/785192071481610464108.m3u8';
+
+            // var videoUrl = 'http://playback.appmagics.cn/recordings/z1.appmagics-avatar-live.785192071480916430193/0_1480934734.m3u8';
+            
+            // var videoUrl = './v3.mp4';
+            playerApp.init(videoUrl,"videoPlayer");
+
+
+            $('.pause').click(function() {
+                $('.pause').hide();
+                playerApp.doplay();
+            });
+
+
+
+
+        </script>        
+
+    
+
+</body></html>
